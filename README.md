@@ -12,8 +12,9 @@ Companion repository for the [Access DevCon Vienna 2026](https://nolongerset.com
 ## Quick Start (Dropbox)
 
 1. **Download** this repository as a ZIP: click the green **Code** button above, then **Download ZIP**
-2. **Extract** the ZIP to any folder
-3. **Double-click** `gblauncher-demo.bat`
+2. **Unblock** the ZIP: right-click the downloaded file → **Properties** → check **Unblock** → **OK**
+3. **Extract** the ZIP to any folder
+4. **Double-click** `gblauncher-demo.bat`
 
 The launcher will download the demo Access application from Dropbox, verify its integrity, cache it locally, and open it in Microsoft Access. A form will display the current version number (e.g., **v1.0.0**).
 
@@ -53,6 +54,10 @@ GBLauncher.exe --app myapp --source "\\server\share\deploy\myapp.version"
 The launcher reads the sidecar, copies the `.accdb`, verifies the SHA-256 hash, caches it locally to `%LOCALAPPDATA%\GBLauncher\cache\`, and opens it in Access. On subsequent runs, it only downloads if a new version is available.
 
 ## Troubleshooting
+
+### "Open File - Security Warning" dialog
+
+If Windows shows a security warning when you double-click the batch file, you extracted the ZIP without unblocking it first. To fix: right-click the original ZIP → **Properties** → check **Unblock** → **OK**, then re-extract. Alternatively, click **Run** to proceed.
 
 ### Windows SmartScreen warning
 
