@@ -9,6 +9,18 @@ Companion repository for the [Access DevCon Vienna 2026](https://nolongerset.com
 - **Microsoft Access** (any version — 32-bit or 64-bit)
 - **Windows 10 or later**
 
+## Features
+
+- **SHA-256 integrity verification** — every download is hash-checked against the version sidecar before caching, protecting against corrupted or tampered files
+- **Automatic Trusted Location registration** — the local cache folder is registered as an Access Trusted Location in the registry, so users are never prompted to enable content
+- **No admin privileges required** — all data is stored under `%LOCALAPPDATA%\GBLauncher\` and only `HKCU` registry keys are touched; no `HKLM` writes, no elevation prompts
+- **Auto-detects Microsoft Access** — finds the correct `msaccess.exe` via the registry, works with both full Access and Access Runtime, any version (32-bit or 64-bit)
+- **Smart caching** — only downloads when a new version is available; cached versions launch instantly without network calls
+- **RDS / Terminal Server compatible** — the front-end is cached in each user's local profile (`%LOCALAPPDATA%`), so multiple users on the same server each get their own copy
+- **Single executable, no installer** — just drop `GBLauncher.exe` in a folder and run it; nothing to install, nothing to configure
+- **Offline fallback** — if the network is unavailable, the launcher opens the last cached version instead of failing
+- **Multiple deployment methods** — serve files from a local folder, a network share (UNC path), Dropbox, or any HTTP URL
+
 ## Quick Start (Dropbox)
 
 1. **Download** this repository as a ZIP: click the green **Code** button above, then **Download ZIP**
