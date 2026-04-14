@@ -26,18 +26,23 @@ Companion repository for the [Access DevCon Vienna 2026](https://nolongerset.com
 1. **Download** this repository as a ZIP: click the green **Code** button above, then **Download ZIP**
 2. **Unblock** the ZIP: right-click the downloaded file → **Properties** → check **Unblock** → **OK**
 3. **Extract** the ZIP to any folder
-4. **Double-click** `gblauncher-demo.bat`
+4. **Double-click** `install-gblauncher-demo.bat`
 
-The launcher will download the demo Access application from Dropbox, verify its integrity, cache it locally, and open it in Microsoft Access. A form will display the current version number (e.g., **v1.0.0**).
+The launcher will install itself, download the GBLauncher Demo app from Dropbox, create a desktop shortcut with a custom icon, and open the app in Microsoft Access. A form will display the current version number (e.g., **v1.0.0**).
+
+5. Close Access and **double-click** `install-folder-watcher.bat`
+
+This installs a second app, Folder Watcher, with its own desktop shortcut and icon. You now have two independent apps on your desktop.
 
 ### During the Presentation
 
 1. Close Microsoft Access
-2. Wait for the presenter to publish a new version
-3. Double-click `gblauncher-demo.bat` again
+2. Wait for the presenter to publish a new version of **GBLauncher Demo**
+3. Click the **GBLauncher Demo** desktop shortcut
 4. The launcher detects the new version, downloads it, and opens it — the form now shows the updated version
+5. Click the **Folder Watcher** desktop shortcut — it still shows the original version, proving apps update independently
 
-This demonstrates the full update cycle: the presenter publishes a new version to Dropbox with a single command, and every attendee gets the update automatically on their next launch.
+This demonstrates the full install and update cycle: the presenter publishes a new version to Dropbox with a single command, and every attendee gets the update automatically on their next launch — without touching Folder Watcher.
 
 ## Local Network Deployment
 
@@ -87,12 +92,14 @@ The demo requires any edition of Microsoft Access. If you don't have Access inst
 
 | File | Description |
 |------|-------------|
-| `gblauncher-demo.bat` | Batch file that launches the demo (pre-configured with the Dropbox URL) |
-| `GBLauncher.exe` | The launcher client — downloads, verifies, caches, and opens Access apps |
+| `install-gblauncher-demo.bat` | Installs the GBLauncher Demo app — creates a desktop shortcut and launches it |
+| `install-folder-watcher.bat` | Installs the Folder Watcher app — creates a desktop shortcut and launches it |
+| `GBLauncher.exe` | The launcher client — installs, downloads, verifies, caches, and opens Access apps |
 | `GBLauncher.twinproj` | Full twinBASIC source code for the launcher (open in [twinBASIC IDE](https://twinbasic.com/)) |
-| `templates/modSampleApp.bas` | VBA module used to create the demo Access application |
 | `CHANGELOG.md` | Version history in [Keep a Changelog](https://keepachangelog.com/) format |
 | `LICENSE` | MIT license |
+
+The FolderWatcher twinBASIC source is available at [github.com/NoLongerSet/tb-folder-watcher](https://github.com/NoLongerSet/tb-folder-watcher).
 
 Versioned downloads are also available on the [Releases](https://github.com/NoLongerSet/DevCon2026/releases) page.
 
