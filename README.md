@@ -32,10 +32,10 @@ GBLauncher also supports file-based deployment over local or network drives — 
 
 ### Publishing a version
 
-Use the dev build to publish an Access file to a shared folder:
+Publish an Access file to a shared folder:
 
 ```cmd
-GBLauncher_dev.exe --publish-local --app myapp --file "C:\path\to\MyApp.accdb" --version 1.0.0 --output "\\server\share\deploy"
+GBLauncher.exe --publish-local --app myapp --file "C:\path\to\MyApp.accdb" --version 1.0.0 --output "\\server\share\deploy"
 ```
 
 This creates two files in the output folder:
