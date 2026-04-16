@@ -17,13 +17,13 @@ Companion repository for the [Access DevCon Vienna 2026](https://nolongerset.com
 - **Auto-detects Microsoft Access** — finds the correct `msaccess.exe` via the registry, works with both full Access and Access Runtime, any version (32-bit or 64-bit)
 - **Smart caching** — only downloads when a new version is available; cached versions launch instantly without network calls
 - **RDS / Terminal Server compatible** — the front-end is cached in each user's local profile (`%LOCALAPPDATA%`), so multiple users on the same server each get their own copy
-- **Single executable, no installer** — just drop `GBLauncher.exe` in a folder and run it; nothing to install, nothing to configure
+- **Single executable, no installer** — just drop `GBLauncher.exe` in a folder and run it; nothing to install. You do need to configure command line arguments so the launcher knows where to check for updates (see [Local Network Deployment](#local-network-deployment) below)
 - **Offline fallback** — if the network is unavailable, the launcher opens the last cached version instead of failing
 - **Multiple deployment methods** — serve files from a local folder, a network share (UNC path), Dropbox, or any HTTP URL
 
 ## Quick Start (Dropbox)
 
-1. **Download** this repository as a ZIP: click the green **Code** button above, then **Download ZIP**
+1. **Download** this repository as a ZIP: click the green **Code** button above, then **[Download ZIP](https://github.com/NoLongerSet/DevCon2026/archive/refs/heads/main.zip)**
 2. **Unblock** the ZIP: right-click the downloaded file → **Properties** → check **Unblock** → **OK**
 3. **Extract** the ZIP to any folder
 4. **Double-click** `install-gblauncher-demo.bat`
@@ -78,7 +78,7 @@ If Windows shows a security warning when you double-click the batch file, you ex
 
 ### Windows SmartScreen warning
 
-Because this executable is not code-signed, Windows may show a SmartScreen warning the first time you run it. Click **More info**, then **Run anyway**.
+All GBLauncher executables are EV code-signed, so SmartScreen should not block them. If you still see a warning, it may be because the file was downloaded inside a ZIP that was not unblocked before extraction (see above).
 
 ### Antivirus blocking the executable
 
